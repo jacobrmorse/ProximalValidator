@@ -32,9 +32,19 @@ namespace Proximal_Validator
             ReadFullMemFile();
         }
 
-        //public static void ValidFieldLength()
-        //{
-        //    using MemFile
-        //}
+        internal static void ValidFieldLength()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void CharacterType()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void RequiredFields()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

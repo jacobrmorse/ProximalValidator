@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Proximal_Validator
 {
-    public class Comparison
+    public static class Comparison
     {
-        string IndFileName = IndividualFile.FileName;
-        string MemFileName = MemberFile.FileName;
+        static string IndFileName = IndividualFile.FileName;
+        static string MemFileName = MemberFile.FileName;
+
+        public static void CompareFiles()
+        {
+
+        }
     }
 }

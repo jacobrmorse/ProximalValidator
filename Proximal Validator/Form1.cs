@@ -45,8 +45,6 @@ namespace Proximal_Validator
             { ValidateBtn.Visible = true; }
         }
 
-
-
         private void ValidateBtn_Click(object sender, EventArgs e)
         {
             // Read files to tables
@@ -63,24 +61,22 @@ namespace Proximal_Validator
             ColCount2.Text = MemberFile.MemFile.Columns.Count.ToString();
 
             // Validate character lengths where required
-            // MemberFile.ValidFieldLength();
-            // IndividualFile.ValidFieldLength();
+            MemberFile.ValidFieldLength();
+            IndividualFile.ValidFieldLength();
 
             // Validate character type where required
-            // MemberFile.CharacterType();
-            // IndividualFile.CharacterType();
+            MemberFile.CharacterType();
+            IndividualFile.CharacterType();
 
             // Validate empty fields to ensure not required
-            // MemberFile.RequiredFields();
-            // IndividualFile.RequiredFields();
+            MemberFile.RequiredFields();
+            IndividualFile.RequiredFields();
 
             // Validate comparison btwn files
-            // Comparison.CompareFiles();
+            Comparison.CompareFiles();
         }
 
         private void MemberGrid_VisibleChanged(object sender, EventArgs e)
-        {
-
-        }
+        {}
     }
 }

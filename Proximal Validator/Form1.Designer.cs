@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.MemberFileTxtbx = new System.Windows.Forms.TextBox();
             this.IndFileTxtbx = new System.Windows.Forms.TextBox();
@@ -35,8 +36,15 @@
             this.IndFileLbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.ValidateBtn = new System.Windows.Forms.Button();
+            this.MemberGrid = new System.Windows.Forms.DataGridView();
+            this.ColCount = new System.Windows.Forms.Label();
+            this.memberFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.memberFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ColCount2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -103,14 +111,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.DefaultExt = "csv";
-            this.openFileDialog2.Filter = "CSV files|*.csv";
-            this.openFileDialog2.InitialDirectory = "%userprofile%\\documents";
-            this.openFileDialog2.Title = "Individual File Validation";
-            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
-            // 
             // ValidateBtn
             // 
             this.ValidateBtn.AutoSize = true;
@@ -120,8 +120,55 @@
             this.ValidateBtn.TabIndex = 6;
             this.ValidateBtn.Text = "Validate Files";
             this.ValidateBtn.UseVisualStyleBackColor = true;
-            this.ValidateBtn.UseWaitCursor = true;
+            this.ValidateBtn.Visible = false;
             this.ValidateBtn.Click += new System.EventHandler(this.ValidateBtn_Click);
+            // 
+            // MemberGrid
+            // 
+            this.MemberGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.MemberGrid.AllowUserToAddRows = false;
+            this.MemberGrid.AllowUserToDeleteRows = false;
+            this.MemberGrid.AllowUserToResizeColumns = false;
+            this.MemberGrid.AllowUserToResizeRows = false;
+            this.MemberGrid.AutoGenerateColumns = false;
+            this.MemberGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.MemberGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.MemberGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.MemberGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MemberGrid.DataSource = this.memberFileBindingSource1;
+            this.MemberGrid.Location = new System.Drawing.Point(126, 212);
+            this.MemberGrid.Name = "MemberGrid";
+            this.MemberGrid.ReadOnly = true;
+            this.MemberGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MemberGrid.Size = new System.Drawing.Size(240, 150);
+            this.MemberGrid.TabIndex = 7;
+            this.MemberGrid.VisibleChanged += new System.EventHandler(this.MemberGrid_VisibleChanged);
+            // 
+            // ColCount
+            // 
+            this.ColCount.AutoSize = true;
+            this.ColCount.Location = new System.Drawing.Point(404, 224);
+            this.ColCount.Name = "ColCount";
+            this.ColCount.Size = new System.Drawing.Size(50, 13);
+            this.ColCount.TabIndex = 8;
+            this.ColCount.Text = "ColCount";
+            // 
+            // memberFileBindingSource1
+            // 
+            this.memberFileBindingSource1.DataSource = typeof(Proximal_Validator.MemberFile);
+            // 
+            // memberFileBindingSource
+            // 
+            this.memberFileBindingSource.DataSource = typeof(Proximal_Validator.MemberFile);
+            // 
+            // ColCount2
+            // 
+            this.ColCount2.AutoSize = true;
+            this.ColCount2.Location = new System.Drawing.Point(404, 249);
+            this.ColCount2.Name = "ColCount2";
+            this.ColCount2.Size = new System.Drawing.Size(56, 13);
+            this.ColCount2.TabIndex = 9;
+            this.ColCount2.Text = "ColCount2";
             // 
             // Form1
             // 
@@ -130,7 +177,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(507, 307);
+            this.ClientSize = new System.Drawing.Size(507, 396);
+            this.Controls.Add(this.ColCount2);
+            this.Controls.Add(this.ColCount);
+            this.Controls.Add(this.MemberGrid);
             this.Controls.Add(this.ValidateBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -140,6 +190,9 @@
             this.Controls.Add(this.MemberFileTxtbx);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,8 +207,12 @@
         private System.Windows.Forms.Label IndFileLbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Button ValidateBtn;
+        private System.Windows.Forms.DataGridView MemberGrid;
+        private System.Windows.Forms.BindingSource memberFileBindingSource1;
+        private System.Windows.Forms.BindingSource memberFileBindingSource;
+        private System.Windows.Forms.Label ColCount;
+        public System.Windows.Forms.Label ColCount2;
     }
 }
 

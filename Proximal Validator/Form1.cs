@@ -31,7 +31,7 @@ namespace Proximal_Validator
             MemberFileTxtbx.Text = openFileDialog1.FileName;
             ValidateBtnBool1 = true;
 
-            if (ValidateBtnBool2 == true)
+            if (ValidateBtnBool2 == true) 
             { ValidateBtn.Visible = true; }
         }
 

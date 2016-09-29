@@ -57,8 +57,14 @@ namespace Proximal_Validator
             MemberGrid.AutoGenerateColumns = true;
             MemberGrid.Update();
 
+            IndGrid.DataSource = IndividualFile.IndFile;
+            IndGrid.AutoGenerateColumns = true;
+            IndGrid.Update();
+
             ColCount.Text = MemberGrid.ColumnCount.ToString();
             ColCount2.Text = MemberFile.MemFile.Columns.Count.ToString();
+            ColCount3.Text = IndividualFile.IndFile.Columns.Count.ToString();
+            ColCount4.Text = IndGrid.ColumnCount.ToString();
 
             // Validate character lengths where required
             MemberFile.ValidFieldLength();
@@ -78,5 +84,10 @@ namespace Proximal_Validator
 
         private void MemberGrid_VisibleChanged(object sender, EventArgs e)
         {}
+
+        private void ColCount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

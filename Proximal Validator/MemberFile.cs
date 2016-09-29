@@ -34,17 +34,17 @@ namespace Proximal_Validator
 
         internal static void ValidFieldLength()
         {
-            throw new NotImplementedException();
+            
         }
 
         internal static void CharacterType()
         {
-            throw new NotImplementedException();
+            
         }
 
         internal static void RequiredFields()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -39,10 +39,14 @@
             this.ValidateBtn = new System.Windows.Forms.Button();
             this.MemberGrid = new System.Windows.Forms.DataGridView();
             this.ColCount = new System.Windows.Forms.Label();
+            this.ColCount2 = new System.Windows.Forms.Label();
+            this.IndGrid = new System.Windows.Forms.DataGridView();
             this.memberFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.memberFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ColCount2 = new System.Windows.Forms.Label();
+            this.ColCount3 = new System.Windows.Forms.Label();
+            this.ColCount4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +140,7 @@
             this.MemberGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.MemberGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MemberGrid.DataSource = this.memberFileBindingSource1;
-            this.MemberGrid.Location = new System.Drawing.Point(126, 212);
+            this.MemberGrid.Location = new System.Drawing.Point(12, 189);
             this.MemberGrid.Name = "MemberGrid";
             this.MemberGrid.ReadOnly = true;
             this.MemberGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -147,11 +151,41 @@
             // ColCount
             // 
             this.ColCount.AutoSize = true;
-            this.ColCount.Location = new System.Drawing.Point(404, 224);
+            this.ColCount.Location = new System.Drawing.Point(346, 43);
             this.ColCount.Name = "ColCount";
             this.ColCount.Size = new System.Drawing.Size(50, 13);
             this.ColCount.TabIndex = 8;
             this.ColCount.Text = "ColCount";
+            this.ColCount.Click += new System.EventHandler(this.ColCount_Click);
+            // 
+            // ColCount2
+            // 
+            this.ColCount2.AutoSize = true;
+            this.ColCount2.Location = new System.Drawing.Point(258, 189);
+            this.ColCount2.Name = "ColCount2";
+            this.ColCount2.Size = new System.Drawing.Size(56, 13);
+            this.ColCount2.TabIndex = 9;
+            this.ColCount2.Text = "ColCount2";
+            // 
+            // IndGrid
+            // 
+            this.IndGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.IndGrid.AllowUserToAddRows = false;
+            this.IndGrid.AllowUserToDeleteRows = false;
+            this.IndGrid.AllowUserToResizeColumns = false;
+            this.IndGrid.AllowUserToResizeRows = false;
+            this.IndGrid.AutoGenerateColumns = false;
+            this.IndGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.IndGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.IndGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.IndGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.IndGrid.DataSource = this.memberFileBindingSource1;
+            this.IndGrid.Location = new System.Drawing.Point(409, 189);
+            this.IndGrid.Name = "IndGrid";
+            this.IndGrid.ReadOnly = true;
+            this.IndGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.IndGrid.Size = new System.Drawing.Size(240, 150);
+            this.IndGrid.TabIndex = 10;
             // 
             // memberFileBindingSource1
             // 
@@ -161,14 +195,23 @@
             // 
             this.memberFileBindingSource.DataSource = typeof(Proximal_Validator.MemberFile);
             // 
-            // ColCount2
+            // ColCount3
             // 
-            this.ColCount2.AutoSize = true;
-            this.ColCount2.Location = new System.Drawing.Point(404, 249);
-            this.ColCount2.Name = "ColCount2";
-            this.ColCount2.Size = new System.Drawing.Size(56, 13);
-            this.ColCount2.TabIndex = 9;
-            this.ColCount2.Text = "ColCount2";
+            this.ColCount3.AutoSize = true;
+            this.ColCount3.Location = new System.Drawing.Point(678, 189);
+            this.ColCount3.Name = "ColCount3";
+            this.ColCount3.Size = new System.Drawing.Size(56, 13);
+            this.ColCount3.TabIndex = 11;
+            this.ColCount3.Text = "ColCount3";
+            // 
+            // ColCount4
+            // 
+            this.ColCount4.AutoSize = true;
+            this.ColCount4.Location = new System.Drawing.Point(354, 118);
+            this.ColCount4.Name = "ColCount4";
+            this.ColCount4.Size = new System.Drawing.Size(56, 13);
+            this.ColCount4.TabIndex = 12;
+            this.ColCount4.Text = "ColCount4";
             // 
             // Form1
             // 
@@ -177,7 +220,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(507, 396);
+            this.ClientSize = new System.Drawing.Size(783, 396);
+            this.Controls.Add(this.ColCount4);
+            this.Controls.Add(this.ColCount3);
+            this.Controls.Add(this.IndGrid);
             this.Controls.Add(this.ColCount2);
             this.Controls.Add(this.ColCount);
             this.Controls.Add(this.MemberGrid);
@@ -191,6 +237,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IndGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberFileBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -213,6 +260,9 @@
         private System.Windows.Forms.BindingSource memberFileBindingSource;
         private System.Windows.Forms.Label ColCount;
         public System.Windows.Forms.Label ColCount2;
+        private System.Windows.Forms.DataGridView IndGrid;
+        private System.Windows.Forms.Label ColCount3;
+        private System.Windows.Forms.Label ColCount4;
     }
 }
 

@@ -14,9 +14,9 @@ namespace Proximal_Validator
     {
         public static string FileName { get; set; }
 
-        public static DataTable IndFile { get; set; }
+        public static DataTable IndFile = new DataTable();
 
-        private static void ReadFullMemFile()
+        private static void ReadFullIndFile()
         {
             char delimiter = '|';
             using (CsvReader reader =
@@ -32,30 +32,19 @@ namespace Proximal_Validator
             ReadFullIndFile();
         }
 
-        private static void ReadFullIndFile()
-        {
-            IndFile = new DataTable();
-            char delimiter = '|';
-            using (CsvReader reader =
-                new CsvReader(new StreamReader(FileName), true, delimiter))
-            {
-                IndFile.Load(reader,LoadOption.OverwriteChanges);
-            }
-        }
-
         internal static void ValidFieldLength()
         {
-            throw new NotImplementedException();
+
         }
 
         internal static void CharacterType()
         {
-            throw new NotImplementedException();
+
         }
 
         internal static void RequiredFields()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

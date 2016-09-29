@@ -47,11 +47,15 @@ namespace Proximal_Validator
 
         private void ValidateBtn_Click(object sender, EventArgs e)
         {
+            MemberFile.MemFile = new DataTable();
+            IndividualFile.IndFile = new DataTable();
             // Read files to tables
             MemberFile.FileName = MemberFileTxtbx.Text;
             IndividualFile.FileName = IndFileTxtbx.Text;
             MemberFile.setup();
             IndividualFile.setup();
+
+            ValidateBtn.Visible = false;
 
             MemberGrid.DataSource = MemberFile.MemFile;
             MemberGrid.AutoGenerateColumns = true;

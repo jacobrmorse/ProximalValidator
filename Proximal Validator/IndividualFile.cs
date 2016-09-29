@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows;
 using LumenWorks.Framework.IO.Csv;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Proximal_Validator
 {
@@ -44,7 +45,10 @@ namespace Proximal_Validator
 
         internal static void RequiredFields()
         {
-
+            if (IndFile.Columns.Count != 32)
+            {
+                MessageBox.Show("The Individual file is not coomplete. There are only " + IndFile.Columns.Count + " of 32 columns.", "Error.", MessageBoxButtons.OK);
+            }
         }
     }
 }
